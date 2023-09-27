@@ -1,0 +1,95 @@
+// int[] array = { 1, 4, 7, 66, 74, 937, 3, 54, 8 };
+// int n = array.Length;
+// int find = 4;
+// int index = 0;
+
+// while (index < n)
+// {
+//     if (array[index] == find)
+//     {
+//         Console.Write(index)
+//     }
+//     index++
+// }
+#
+void FillArray(int[] collection)
+{
+    int lenth = collection.Length;
+    int index = 0;
+
+    while ( index < lenth)
+    {
+        collection[index] =new Random().Next(1,10);
+        index++;
+    }
+
+}
+
+void PrintArray(int[] col)
+{
+    int count = col.Length;
+    int position = 0;
+    while(position<count)
+    {
+        Console.Write(col[position]);
+        Console.Write(" ");
+        position++;
+    }
+}
+
+int IndexOf(int[] array, int find)
+{
+    int len = array.Length;
+    int i = 0;
+    int pos=-1;
+    while(i < len)
+    {
+        if(array[i] == find)
+        {
+            pos = i;
+            break;
+        }
+        i++;
+    }
+    return pos;
+}
+int[] arr = new int[10]; // all zero
+
+FillArray(arr);
+PrintArray(arr);
+
+Console.WriteLine(' ');
+Console.Write(IndexOf(arr,4));
+
+
+int[] arr = { 5, 7, 2, 5, 3, 8, 1, 6 };
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+void SelectionArray(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int min = i;
+        for (int j = i + 1; j < array.Length; j++)
+            if (array[j] < array[min])
+            {
+                min = j;
+            }
+        int temp = array[min];
+        array[min] = array[i];
+        array[i] = temp;
+    }
+
+}
+
+PrintArray(arr);
+SelectionArray(arr);
+PrintArray(arr);
